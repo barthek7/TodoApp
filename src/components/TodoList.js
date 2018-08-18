@@ -4,7 +4,7 @@ import style from './TodoList.css'
 const TodoList = ({todos, remove}) => {
     const todoItems = todos.map((todo) => {
        return (
-           <li key={todo.id} onClick={remove(todo.id)}>{todo.text}</li>
+           <li key={todo.id} onClick={remove.bind(this,todo.id)}>{todo.text}</li>
        )
     });
     return (

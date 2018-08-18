@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import uuid from 'uuid';
+import {hot} from 'react-hot-loader';
 import style from './App.css';
 import Title from '../components/Title';
 import TodoList from '../components/TodoList';
@@ -36,10 +37,10 @@ class App extends React.Component {
         return(
             <div className={style.TodoApp}>
             <Title title="To Do List" taskQty={this.state.data.length} />
-            <TodoList todos={this.state.data} remove={() => this.removeTodo()} />
+            <TodoList todos={this.state.data} remove={this.removeTodo} />
             </div>
         )
     }
 }
 
-export default App;
+export default hot(module)(App);
